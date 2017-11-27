@@ -1,7 +1,20 @@
 .wrapper {
-    margin-left: 25%;
-    margin-top: 1%;
-    img{ height: 75%;
-      width: 75%;
-    }
+    // margin-left: 25%;
+    // margin-top: 1%;
+    margin: 0 auto;
   }
+
+  // #wrap { width:500px; margin:0 auto; }
+.body { 
+  overflow:auto;
+  // margin-left: 20px;
+  img{ height: 75%;
+    width: 75%;
+  }
+ }
+
+.sidebar {
+  float:left; 
+  width:250px;
+  min-height:400px;
+}
