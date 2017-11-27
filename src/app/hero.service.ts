@@ -53,6 +53,8 @@ export class HeroService {
     );
   }
 
+  
+
   /* GET heroes whose name contains search term */
   searchHeroes(term: string): Observable<Hero[]> {
     if (!term.trim()) {

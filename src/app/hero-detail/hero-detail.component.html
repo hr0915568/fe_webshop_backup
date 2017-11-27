@@ -9,3 +9,12 @@
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
 </div>
+
+test
+<div class="products" *ngFor="let product of products" routerLink="/detail/{{hero.id}}">
+  <a>
+     {{product.name}}
+  </a> tests
+  <!-- <button class="delete" title="delete hero"
+  (click)="delete(hero)">x</button> -->
+</div>

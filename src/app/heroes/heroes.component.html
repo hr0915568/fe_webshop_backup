@@ -1,7 +1,7 @@
 <h2>Categories:</h2>
 
 <div class ="filters">
-  <div class="listing" *ngFor="let hero of heroes">
+  <div class="listing" *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
     <a routerLink="/detail/{{hero.id}}">
        {{hero.name}}
     </a>

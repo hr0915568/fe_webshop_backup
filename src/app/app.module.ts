@@ -21,6 +21,10 @@ import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.comp
 import { LayoutHeaderComponent } from './layout/layout-header/layout-header.component';
 import { HomeComponent } from './home/home.component';
 
+
+import { ProductsComponent } from './products/products.component';
+import { ProductService }          from './product.service';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -45,9 +49,10 @@ import { HomeComponent } from './home/home.component';
     LayoutComponent,
     LayoutFooterComponent,
     LayoutHeaderComponent,
-    HomeComponent,    
+    HomeComponent,
+    ProductsComponent,    
   ],
-  providers: [ HeroService, MessageService ],
+  providers: [ HeroService, MessageService, ProductService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

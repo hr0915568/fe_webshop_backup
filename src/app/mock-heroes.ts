@@ -6,7 +6,7 @@ export const HEROES: Hero[] = [
     "name": "Lights"
   },
   {
-    "id": 1,
+    "id": 2,
     "name": "BRAM"
   },
   {

@@ -17,6 +17,10 @@
   border: 1px solid #333333;
   background-color: #cccccc2c;
 }
+.listing:hover { 
+  background-color: #27252580;
+}
+
 a:link, a:visited, a:hover, a:active {
   text-decoration: none; color: rgb(0, 0, 0);
 }
