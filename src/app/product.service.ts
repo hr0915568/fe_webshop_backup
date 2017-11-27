@@ -15,7 +15,8 @@ const httpOptions = {
 @Injectable()
 export class ProductService {
 
-  private productsUrl = 'api/products';  // URL to web api
+  // private productsUrl = 'api/products';  // URL to web api
+  private productsUrl = 'http://demo1178997.mockable.io';
 
   constructor(
     private http: HttpClient,

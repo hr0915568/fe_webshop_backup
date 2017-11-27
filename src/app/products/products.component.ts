@@ -57,8 +57,8 @@ export class ProductsComponent implements OnInit {
   // }
 
   getProducts(): void {
-    const parent_id = +this.route.snapshot.paramMap.get('parent_id');
-    this.productService.getProducts(parent_id)
+    const parent_id = +this.route.snapshot.paramMap.get('1');
+    this.productService.getProducts(1)
       .subscribe(product => this.product = product);
   }
 

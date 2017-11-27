@@ -16,7 +16,7 @@ export class LayoutCategoryComponent implements OnInit {
     },
     {
       "categori_id": 2,
-      "name": "BRAM"
+      "name": "BRAaaaaM"
     },
     {
       "categori_id": 3,
