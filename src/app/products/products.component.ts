@@ -1,9 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import {HttpClient} from '@angular/common/http'
 
 import { Product }         from '../product';
 import { ProductService }  from '../product.service';
+
+import 'rxjs/add/operator/map'
+
+import { Jsonp,RequestOptions } from '@angular/http';
+
 
 @Component({
   selector: 'app-products',
@@ -11,23 +17,26 @@ import { ProductService }  from '../product.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  products: Product[];
+  // products: Product[];
+  producten: any;
 
   constructor(
-    private productService: ProductService,
     private route: ActivatedRoute,
-    private location: Location) { }
+    private productService: ProductService,
+    private http: HttpClient) { }
 
     
 
-  ngOnInit() :void {
+  ngOnInit() {
     this.getProducts();
   }
 
 
   getProducts(): void {
-    this.productService.getProducts()
-    .subscribe(products => this.products = products);
+    const parent_id = +this.route.snapshot.paramMap.get('parent_id');
+    this.productService.getProducts(parent_id)
+    .map(result => result as Product[])
+    .subscribe(result => this.producten = result);
   }
   
 
