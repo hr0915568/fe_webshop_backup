@@ -7,7 +7,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Product } from './product';
 import { MessageService } from './message.service';
-
+import { Http,Response} from '@angular/http';
+import 'rxjs/add/operator/map';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -15,21 +16,35 @@ const httpOptions = {
 @Injectable()
 export class ProductService {
 
-  // private productsUrl = 'api/products';  // URL to web api
-  private productsUrl = 'http://demo1178997.mockable.io';
+  private productsUrl = 'api/products';  // URL to web api
+  // private productsUrl = 'http://demo1178997.mockable.io';
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
 
+ /** GET heroes from the server */
+ getProducts (): Observable<Product[]> {
+  return this.http.get<Product[]>(this.productsUrl)
+    .pipe(
+      tap(products => this.log(`fetched products`)),
+      catchError(this.handleError('getProducts', []))
+    );
+  }
+
+
+
+
+
     /** GET heroes from the server */
-    getProducts (parent_id): Observable<Product[]> {
-      return this.http.get<Product[]>(`${this.productsUrl}/${parent_id}`)
-        .pipe(
-          tap(products => this.log(`fetched heroes`)),
-          catchError(this.handleError('getHeroes', []))
-        );
-    }
+    // getProducts (parent_id): Observable<Product[]> {
+    //   return this.http.get<Product[]>(`${this.productsUrl}/${parent_id}`)
+    //     .pipe(
+    //       tap(products => this.log(`fetched heroes`)),
+    //       catchError(this.handleError('getHeroes', []))
+    //     );
+    // }
+
 
   /** GET hero by id. Will 404 if id not found */
   getProduct(parent_id: number): Observable<Product> {
