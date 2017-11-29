@@ -1,31 +1,10 @@
-// @media (
-//         in-width: 768px
-// ) {
 
-.wrapper {
-    // margin-left: 25%;
-    // margin-top: 1%;
-    // margin: 0 auto 0 0;
-    float:auto;
-  }
-
-  // #wrap { width:500px; margin:0 auto; }
-.body { 
-  overflow:auto;
+.home-body { 
+  // overflow:auto;
   padding: 3% 0 0 4%;
   // margin-left: 20px;
   img{ height: 65%;
     width: 65%;
   }
-  float:auto;
+  float:left;
  }
-
-.sidebar {
-  float:left; 
-  // width:10%;
-  // min-height:400px;
-  width:15%;
-  font-size: 1em;
-}
-
-

@@ -3,9 +3,16 @@
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/heroes">Heroes</a>
 </nav> -->
-<div class="main-body">
-<router-outlet></router-outlet>
+<div class="main-webshop">
+<div class="static-menu">
+  <app-heroes></app-heroes>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
 </div>
 
 <!-- <app-messages></app-messages> -->
+<div class="foot">
 <app-layout-footer></app-layout-footer>
+</div>

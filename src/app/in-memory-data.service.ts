@@ -8,7 +8,7 @@ export class InMemoryDataService implements InMemoryDbService {
     "name": "Lights"
   },
   {
-    "id": 1,
+    "id": 2,
     "name": "BRAM123"
   },
   {
@@ -35,40 +35,40 @@ export class InMemoryDataService implements InMemoryDbService {
     const products = [
       {
         "id": 1,
-        "name": "Light1",
-        "parent_id" : 1
+        "name": "TEST123",
+        "categoryid" : 9
       },
       {
         "id": 2,
         "name": "BRAM",
-        "parent_id" : 1
+        "categoryid" : 1
       },
       {
         "id": 3,
         "name": "Steering Wheels",
-        "parent_id" : 2
+        "categoryid" : 3
       },
       {
         "id": 4,
         "name": "Tires",
-        "parent_id" : 1
+        "categoryid" : 1
       },
       {
         "id" : 5,
         "name": "Wheels",
-        "parent_id" : 1
+        "categoryid" : 1
       },
       {
         "id" : 6,
         "name": "Test",
-        "parent_id" : 1
+        "categoryid" : 1
       },
       {
         "id" : 7,
         "name": "123Wheels",
-        "parent_id" : 1
+        "categoryid" : 1
       }
-        ];    
+        ];        
     return {heroes,products};
     // return {};
   }

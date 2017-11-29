@@ -24,35 +24,37 @@ export class ProductService {
     private messageService: MessageService) { }
 
  /** GET heroes from the server */
- getProducts (parent_id: number): Observable<Product[]> {
-  // const url = `${this.productsUrl}`;
-  const url = `${this.productsUrl}/${parent_id}`;
+ getProducts (categoryid: number): Observable<Product[]> {
+  const url = `${this.productsUrl}`;
+  // const url = `${this.productsUrl}/${categoryid}`;
   return this.http.get<Product[]>(url)
     .pipe(
-      tap(products => this.log(`fetched products`)),
-      catchError(this.handleError('getProducts', []))
-    );
+      map(products => products),
+    tap(products => this.log(`fetched product categoryid=${categoryid}`)),
+    catchError(this.handleError<Product[]>(`getProducts categoryid=${categoryid}`))
+  );
+    
   }
 
   /** GET hero by id. Will 404 if id not found */
-  getProduct(parent_id: number): Observable<Product> {
-    const url = `${this.productsUrl}/${parent_id}`;
+  getProduct(categoryid: number): Observable<Product> {
+    const url = `${this.productsUrl}/${categoryid}`;
     return this.http.get<Product>(url).pipe(
-      tap(_ => this.log(`fetched products id=${parent_id}`)),
-      catchError(this.handleError<Product>(`getProduct id=${parent_id}`))
+      tap(_ => this.log(`fetched products id=${categoryid}`)),
+      catchError(this.handleError<Product>(`getProduct id=${categoryid}`))
     );
   }
 
-  getHeroNo404<Data>(parent_id: number): Observable<Product> {
-    const url = `${this.productsUrl}/?parent_id=${parent_id}`;
+  getHeroNo404<Data>(categoryid: number): Observable<Product> {
+    const url = `${this.productsUrl}/?categoryid=${categoryid}`;
     return this.http.get<Product[]>(url)
       .pipe(
         map(products => products[0]), // returns a {0|1} element array
         tap(h => {
           const outcome = h ? `fetched` : `did not find`;
-          this.log(`${outcome} hero id=${parent_id}`);
+          this.log(`${outcome} hero id=${categoryid}`);
         }),
-        catchError(this.handleError<Product>(`getHero id=${parent_id}`))
+        catchError(this.handleError<Product>(`getHero id=${categoryid}`))
       );
   }
 

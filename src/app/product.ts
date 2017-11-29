@@ -1,6 +1,6 @@
-export class Product {
+export class Product{
     id: number;
     name: string;
-    parent_id: number;
+    categoryid: number;
   }
   

@@ -11,14 +11,16 @@ import 'rxjs/add/operator/map'
 import { Jsonp,RequestOptions } from '@angular/http';
 
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  // products: Product[];
-  producten: any;
+ products: Product[];
+ resultes: Product[];
+
 
   constructor(
     private route: ActivatedRoute,
@@ -28,16 +30,22 @@ export class ProductsComponent implements OnInit {
     
 
   ngOnInit() {
+    // JSON.stringify(this.getProducts());
     this.getProducts();
+    console.log('test' + JSON.stringify(this.products));
   }
 
 
   getProducts(): void {
-    const parent_id = +this.route.snapshot.paramMap.get('parent_id');
-    this.productService.getProducts(parent_id)
-    .map(result => result as Product[])
-    .subscribe(result => this.producten = result);
+    const categoryid = +this.route.snapshot.paramMap.get('categoryid');
+    this.productService.getProducts(categoryid)
+    .subscribe(products => this.products  = products);
+    // this.products = Array.of(this.products);
+    
+    
+    
   }
-  
+
+
 
 }
