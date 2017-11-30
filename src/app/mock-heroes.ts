@@ -1,6 +1,6 @@
-import { Hero } from './hero';
+import { Category } from './category';
 
-export const HEROES: Hero[] = [
+export const CATEGORIES: Category[] = [
   {
     "id": 1,
     "name": "Lightsssss"

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+// import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {HttpClient} from '@angular/common/http'
 
@@ -7,9 +7,10 @@ import { Product }         from '../product';
 import { ProductService }  from '../product.service';
 
 import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/switchMap';
 
 import { Jsonp,RequestOptions } from '@angular/http';
-
+import {ActivatedRoute, ParamMap, Params, Router} from "@angular/router";
 
 
 @Component({
@@ -18,8 +19,8 @@ import { Jsonp,RequestOptions } from '@angular/http';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
- products: Product[];
- resultes: Product[];
+  // products: Product= new Product();
+ products: Product[] = new Array<Product>();
 
 
   constructor(
@@ -30,9 +31,9 @@ export class ProductsComponent implements OnInit {
     
 
   ngOnInit() {
-    // JSON.stringify(this.getProducts());
-    this.getProducts();
-    console.log('test' + JSON.stringify(this.products));
+    const categoryid = +this.route.snapshot.paramMap.get('categoryid');
+    this.productService.getProducts(categoryid)
+    .subscribe(products => this.products  = products);
   }
 
 

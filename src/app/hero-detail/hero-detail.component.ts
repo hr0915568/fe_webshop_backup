@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Hero }         from '../hero';
-import { HeroService }  from '../hero.service';
+import { Category }         from '../category';
+import { CategoryService }  from '../category.service';
 
 
 @Component({
@@ -12,11 +12,11 @@ import { HeroService }  from '../hero.service';
   styleUrls: [ './hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
+  @Input() category: Category;
 
   constructor(
     private route: ActivatedRoute,
-    private heroService: HeroService,
+    private categoryService: CategoryService,
     private location: Location,
   ) {}
 
@@ -27,8 +27,8 @@ export class HeroDetailComponent implements OnInit {
 
   getHero(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+    this.categoryService.getHero(id)
+      .subscribe(category => this.category = category);
   }
 
   goBack(): void {

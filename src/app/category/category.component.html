@@ -2,10 +2,10 @@
 
 <div class ="filters"> 
   <!-- <div class="listing" *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}"> -->
-    <div class="listing" *ngFor="let hero of heroes" routerLink="/products/{{hero.id}}">
+    <div class="listing" *ngFor="let category of categories" routerLink="/products/{{category.id}}">
     <!-- <div class="listing" *ngFor="let hero of heroes" routerLink="/product/"> -->
     <!-- <ul> -->
-       {{hero.name}}
+       {{category.name}}
     <!-- </ul> -->
   </div> 
 </div> 

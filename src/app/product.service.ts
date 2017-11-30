@@ -27,14 +27,29 @@ export class ProductService {
  getProducts (categoryid: number): Observable<Product[]> {
   const url = `${this.productsUrl}`;
   // const url = `${this.productsUrl}/${categoryid}`;
+  // const url = 'http://api.hrwebshop.tk/admin/products';
   return this.http.get<Product[]>(url)
     .pipe(
       map(products => products),
     tap(products => this.log(`fetched product categoryid=${categoryid}`)),
     catchError(this.handleError<Product[]>(`getProducts categoryid=${categoryid}`))
-  );
-    
+  ); 
   }
+
+// getProducts(): Observable<Product[]> {
+//   console.log('getting customers...');
+//   const url = 'http://api.hrwebshop.tk/admin/products';
+//   return this.http.get<Product[]>(url,  {
+//     withCredentials: true,
+//     headers: new HttpHeaders()
+//       .set('Content-type', 'text/plain')
+
+//   }).pipe(
+//     tap(products => console.log(`fetched products`)),
+//     catchError(this.handleError('getHeroes', []))
+//   );
+// }
+
 
   /** GET hero by id. Will 404 if id not found */
   getProduct(categoryid: number): Observable<Product> {
