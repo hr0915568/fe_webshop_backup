@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Category } from '../category';
-import { CategoryService } from '../category.service';
+import { Category } from '../_models/category';
+import { CategoryService } from '../_services/category.service';
 
 @Component({
   selector: 'app-category',
@@ -14,13 +14,13 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
-    this.getHeroes();    
+    this.getCategories();
   }
 
-  getHeroes(): void {
-    this.categoryService.getHeroes()
+  getCategories(): void {
+    this.categoryService.getCategories()
     .subscribe(categories => this.categories = categories);
-    
+
   }
 
 }

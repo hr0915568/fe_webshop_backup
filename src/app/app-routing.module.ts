@@ -6,6 +6,7 @@ import { CategoryComponent }      from './category/category.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { HomeComponent }  from './home/home.component';
 import { ProductsComponent } from './products/products.component';
+import {CategoryProductsListComponent} from './category-products-list/category-products-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'details/:id', component: HeroDetailComponent },
   { path: 'category', component: CategoryComponent },
+  { path: 'category/:id', component: CategoryProductsListComponent },
   { path: 'products/:categoryid', component: ProductsComponent}
 ];
 

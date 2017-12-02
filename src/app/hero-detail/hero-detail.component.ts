@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Category }         from '../category';
-import { CategoryService }  from '../category.service';
+import { Category }         from '../_models/category';
+import { CategoryService }  from '../_services/category.service';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHero();
-    
+
   }
 
   getHero(): void {

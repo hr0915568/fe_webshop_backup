@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../category';
-import { CategoryService } from '../category.service';
+import { Category } from '../_models/category';
+import { CategoryService } from '../_services/category.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.categoryService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+    // this.categoryService.ge()
+    //   .subscribe(heroes => this.heroes = heroes.slice(1, 5));
   }
 }

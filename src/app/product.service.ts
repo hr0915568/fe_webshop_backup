@@ -5,10 +5,10 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Product } from './product';
 import { MessageService } from './message.service';
 import { Http,Response} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Product} from './_models/product';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -17,7 +17,7 @@ const httpOptions = {
 export class ProductService {
 
  // URL to web api
-  private productsUrl = 'api/products'; 
+  private productsUrl = 'api/products';
 
   constructor(
     private http: HttpClient,
@@ -33,7 +33,7 @@ export class ProductService {
       map(products => products),
     tap(products => this.log(`fetched product categoryid=${categoryid}`)),
     catchError(this.handleError<Product[]>(`getProducts categoryid=${categoryid}`))
-  ); 
+  );
   }
 
 // getProducts(): Observable<Product[]> {
@@ -77,7 +77,7 @@ export class ProductService {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
-      console.error(error); 
+      console.error(error);
       // log to console instead
 
       // TODO: better job of transforming error for user consumption
