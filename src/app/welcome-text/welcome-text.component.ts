@@ -29,6 +29,10 @@ export class WelcomeTextComponent implements OnInit, DoCheck {
 
   get name()
   {
+    if(typeof this.auth.profile == 'undefined') {
+      return '';
+    }
+
     return this.auth.profile.firstname;
   }
 }

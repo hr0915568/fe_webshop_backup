@@ -30,6 +30,7 @@ import {MyaccountLayoutComponent} from "./_layouts/myaccount-layout/myaccount-la
 import { LogginButtonComponent } from './loggin-button/loggin-button.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { WelcomeTextComponent } from './welcome-text/welcome-text.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   imports: [
@@ -61,7 +62,8 @@ import { WelcomeTextComponent } from './welcome-text/welcome-text.component';
     MyaccountLayoutComponent,
     LogginButtonComponent,
     MyAccountComponent,
-    WelcomeTextComponent
+    WelcomeTextComponent,
+    SearchComponent
   ],
   providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService ],
   bootstrap: [ AppComponent, LogginButtonComponent, WelcomeTextComponent ]

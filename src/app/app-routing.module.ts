@@ -12,6 +12,7 @@ import {MyaccountLayoutComponent} from "./_layouts/myaccount-layout/myaccount-la
 import {LoginComponent} from "./login/login.component";
 import {MyAccountComponent} from './my-account/my-account.component';
 import {AuthGuard} from './_services/auth-guard.service';
+import {SearchComponent} from './search/search.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,9 @@ const routes: Routes = [
       { path: 'details/:id', component: HeroDetailComponent },
       { path: 'category', component: CategoryComponent },
       { path: 'category/:id', component: CategoryProductsListComponent },
-      { path: 'products/:categoryid', component: ProductsComponent}
+      { path: 'products/:categoryid', component: ProductsComponent},
+      { path: 'search/:keywords', component: SearchComponent},
+      { path: 'search', component: SearchComponent},
     ]
   },
   {
