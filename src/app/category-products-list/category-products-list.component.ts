@@ -4,6 +4,7 @@ import {CategoryService} from '../_services/category.service';
 import {Product} from '../_models/product';
 import 'rxjs/add/operator/switchMap';
 import {forEach} from '@angular/router/src/utils/collection';
+import {AuthService} from '../_services/auth.service';
 
 @Component({
   selector: 'app-category-products-list',
@@ -15,7 +16,8 @@ export class CategoryProductsListComponent implements OnInit {
   products: Product[];
 
   constructor(private route: ActivatedRoute,
-              private categoryService: CategoryService
+              private categoryService: CategoryService,
+              private auth: AuthService
               ) { }
 
   ngOnInit() {

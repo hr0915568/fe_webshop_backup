@@ -27,6 +27,9 @@ import {AuthService} from "./_services/auth.service";
 import {SiteLayoutComponent} from "./_layouts/site-layout/site-layout.component";
 import { LoginComponent } from './login/login.component';
 import {MyaccountLayoutComponent} from "./_layouts/myaccount-layout/myaccount-layout.component";
+import { LogginButtonComponent } from './loggin-button/loggin-button.component';
+import { MyAccountComponent } from './my-account/my-account.component';
+import { WelcomeTextComponent } from './welcome-text/welcome-text.component';
 
 @NgModule({
   imports: [
@@ -55,9 +58,12 @@ import {MyaccountLayoutComponent} from "./_layouts/myaccount-layout/myaccount-la
     CategoryProductsListComponent,
     SiteLayoutComponent,
     LoginComponent,
-    MyaccountLayoutComponent
+    MyaccountLayoutComponent,
+    LogginButtonComponent,
+    MyAccountComponent,
+    WelcomeTextComponent
   ],
   providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent, LogginButtonComponent, WelcomeTextComponent ]
 })
 export class AppModule { }

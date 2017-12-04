@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import {RequestOptions} from "@angular/http";
+import {Userprofile} from '../_models/userprofile';
+import {catchError, tap} from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
@@ -11,6 +13,7 @@ export class AuthService {
   // Create a stream of logged in status to communicate throughout app
   loggedIn: boolean;
   loggedIn$ = new BehaviorSubject<boolean>(this.loggedIn);
+  profile: Userprofile;
 
   constructor(private router: Router, private http: HttpClient) {
     // If authenticated, set local profile property and update login status subject
@@ -23,6 +26,7 @@ export class AuthService {
     // Update login status subject
     this.loggedIn$.next(value);
     this.loggedIn = value;
+    this.getProfile();
   }
 
   login(username: string, password: string) {
@@ -42,6 +46,7 @@ export class AuthService {
       .map((response) => {
         localStorage.setItem('loggedIn', '1');
         this.loggedIn = true;
+        this.getProfile();
       });
 
   }
@@ -49,6 +54,17 @@ export class AuthService {
   handleAuth() {
   }
 
+  private getProfile()
+  {
+    this.http.get<Userprofile>('http://api.hrwebshop.tk/profile',  {
+      withCredentials: true,
+      headers: new HttpHeaders()
+        .set('Content-type', 'text/plain')
+
+    }).pipe(
+      tap(customers => console.log(`fetched heroes`)),
+    ).subscribe(profile => this.profile = profile);
+  }
 
   private _setSession(authResult, profile) {
     // Save session data and update login status subject

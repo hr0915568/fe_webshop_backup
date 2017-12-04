@@ -10,6 +10,8 @@ import {CategoryProductsListComponent} from './category-products-list/category-p
 import {SiteLayoutComponent} from "./_layouts/site-layout/site-layout.component";
 import {MyaccountLayoutComponent} from "./_layouts/myaccount-layout/myaccount-layout.component";
 import {LoginComponent} from "./login/login.component";
+import {MyAccountComponent} from './my-account/my-account.component';
+import {AuthGuard} from './_services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -30,6 +32,7 @@ const routes: Routes = [
     component: MyaccountLayoutComponent,
     children: [
       { path: 'login', component: LoginComponent},
+      { path: 'myaccount', component: MyAccountComponent, canActivate: [AuthGuard] }
     ]
   }
 
