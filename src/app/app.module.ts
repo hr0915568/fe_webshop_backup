@@ -22,6 +22,11 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductService }          from './product.service';
 import { CategoryProductsListComponent } from './category-products-list/category-products-list.component';
+import {AuthGuard} from "./_services/auth-guard.service";
+import {AuthService} from "./_services/auth.service";
+import {SiteLayoutComponent} from "./_layouts/site-layout/site-layout.component";
+import { LoginComponent } from './login/login.component';
+import {MyaccountLayoutComponent} from "./_layouts/myaccount-layout/myaccount-layout.component";
 
 @NgModule({
   imports: [
@@ -48,8 +53,11 @@ import { CategoryProductsListComponent } from './category-products-list/category
     HomeComponent,
     ProductsComponent,
     CategoryProductsListComponent,
+    SiteLayoutComponent,
+    LoginComponent,
+    MyaccountLayoutComponent
   ],
-  providers: [ CategoryService, MessageService, ProductService ],
+  providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
