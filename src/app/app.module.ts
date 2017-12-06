@@ -31,6 +31,8 @@ import { LogginButtonComponent } from './loggin-button/loggin-button.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { WelcomeTextComponent } from './welcome-text/welcome-text.component';
 import { SearchComponent } from './search/search.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   imports: [
@@ -63,7 +65,9 @@ import { SearchComponent } from './search/search.component';
     LogginButtonComponent,
     MyAccountComponent,
     WelcomeTextComponent,
-    SearchComponent
+    SearchComponent,
+    CartComponent,
+    CheckoutComponent
   ],
   providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService ],
   bootstrap: [ AppComponent, LogginButtonComponent, WelcomeTextComponent ]

@@ -13,6 +13,8 @@ import {LoginComponent} from "./login/login.component";
 import {MyAccountComponent} from './my-account/my-account.component';
 import {AuthGuard} from './_services/auth-guard.service';
 import {SearchComponent} from './search/search.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,8 @@ const routes: Routes = [
       { path: 'products/:categoryid', component: ProductsComponent},
       { path: 'search/:keywords', component: SearchComponent},
       { path: 'search', component: SearchComponent},
+      { path: 'cart', component :CartComponent},
+      { path: 'checkout', component: CheckoutComponent}
     ]
   },
   {
