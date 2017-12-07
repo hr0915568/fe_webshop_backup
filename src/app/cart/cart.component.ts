@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CartService} from './../_services/cart.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _cookieService:CookieService) { }
 
   ngOnInit() {
+    this.setCooki();
   }
 
+  setCooki(){
+    return this._cookieService.put('test','testvalue');
+  }
 }

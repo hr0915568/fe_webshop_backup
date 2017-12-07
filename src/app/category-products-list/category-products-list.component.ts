@@ -5,6 +5,7 @@ import {Product} from '../_models/product';
 import 'rxjs/add/operator/switchMap';
 import {forEach} from '@angular/router/src/utils/collection';
 import {AuthService} from '../_services/auth.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @Component({
   selector: 'app-category-products-list',
@@ -17,7 +18,8 @@ export class CategoryProductsListComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private categoryService: CategoryService,
-              private auth: AuthService
+              private auth: AuthService,
+              private _cookieService:CookieService
               ) { }
 
   ngOnInit() {
@@ -53,6 +55,20 @@ export class CategoryProductsListComponent implements OnInit {
     }
 
     return products;
+  }
+
+  setCooki(string){
+    if (this.getCookie() == 'PROD1') {
+      console.log(this.getCookie() + ' Prod1 exists');
+      this._cookieService.put('bramcartitems',string + this.getCookie())
+    }
+    else {
+    return this._cookieService.put('bramcartitems',string);
+    }
+  }
+
+  getCookie() {
+    return this._cookieService.get('bramcartitems');
   }
 
 }

@@ -33,13 +33,14 @@ import { WelcomeTextComponent } from './welcome-text/welcome-text.component';
 import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -69,7 +70,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CartComponent,
     CheckoutComponent
   ],
-  providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService ],
+  providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService,CookieService ],
   bootstrap: [ AppComponent, LogginButtonComponent, WelcomeTextComponent ]
 })
 export class AppModule { }
