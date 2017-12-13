@@ -23,21 +23,19 @@
 				<div class="col-md-1 c-cart-remove"></div>
 			</div>
 			<!-- BEGIN: SHOPPING CART ITEM ROW -->
-			<div class="row c-cart-table-row" >
+			<div class="row c-cart-table-row" *ngFor="let product of products" >
 					<!-- *ngFor="let products of product" -->
 				<h2 class="c-font-uppercase c-font-bold c-theme-bg c-font-white c-cart-item-title c-cart-item-first">Item 1</h2>
 				<div class="col-md-2 col-sm-3 col-xs-5 c-cart-image">
 					<img src="../../assets/base/img/content/shop2/24.jpg"/>
 				</div>
 				<div class="col-md-4 col-sm-9 col-xs-7 c-cart-desc">
-					<h3><a href="shop-product-details-2.html" class="c-font-bold c-theme-link c-font-22 c-font-dark">{{products}}</a></h3>
+					<h3><a href="shop-product-details-2.html" class="c-font-bold c-theme-link c-font-22 c-font-dark">{{product.productname}}</a></h3>
 					<!-- {{product.name}} -->
 					<p>Color: Blue</p>
 					<p>Size: S</p>
 				</div>
 				<div class="col-md-1 col-sm-3 col-xs-6 c-cart-ref">
-					<p class="c-cart-sub-title c-theme-font c-font-uppercase c-font-bold">SKU</p>
-					<p>120715</p>
 				</div>
 				<div class="col-md-1 col-sm-3 col-xs-6 c-cart-qty">
 					<p class="c-cart-sub-title c-theme-font c-font-uppercase c-font-bold">QTY</p>
@@ -51,11 +49,11 @@
 				</div>
 				<div class="col-md-2 col-sm-3 col-xs-6 c-cart-price">
 					<p class="c-cart-sub-title c-theme-font c-font-uppercase c-font-bold">Unit Price</p>
-					<p class="c-cart-price c-font-bold">$147.00</p>
+					<p class="c-cart-price c-font-bold">&euro;{{product.price}}</p>
 				</div>
 				<div class="col-md-1 col-sm-3 col-xs-6 c-cart-total">
 					<p class="c-cart-sub-title c-theme-font c-font-uppercase c-font-bold">Total</p>
-					<p class="c-cart-price c-font-bold">$147.00</p>
+					<p class="c-cart-price c-font-bold">&euro;{{product.price}}</p>
 				</div>
 				<div class="col-md-1 col-sm-12 c-cart-remove">
 					<a href="#" class="c-theme-link c-cart-remove-desktop">×</a>
