@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from './../_services/cart.service';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+import {Product} from '../_models/product';
+import { toArray } from 'rxjs/operators/toArray';
 
 
 @Component({
@@ -9,14 +10,22 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  products: Product[];
 
-  constructor(private _cookieService:CookieService) { }
+  constructor(private cart: CartService) { }
 
   ngOnInit() {
-    this.setCooki();
+    this.getproductsforCart();
   }
 
-  setCooki(){
-    return this._cookieService.put('test','testvalue');
+  getproductsforCart() {
+  // let tempproducts = JSON.parse(this.cart._getcart());
+  // this.products = toArray(tempproducts);
+  this.products = this.cart._getcart1()
+  console.log(this.products);
+  
+  // return this.products;  
+  return this.products;
   }
+
 }

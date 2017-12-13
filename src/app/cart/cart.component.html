@@ -23,13 +23,15 @@
 				<div class="col-md-1 c-cart-remove"></div>
 			</div>
 			<!-- BEGIN: SHOPPING CART ITEM ROW -->
-			<div class="row c-cart-table-row">
+			<div class="row c-cart-table-row" >
+					<!-- *ngFor="let products of product" -->
 				<h2 class="c-font-uppercase c-font-bold c-theme-bg c-font-white c-cart-item-title c-cart-item-first">Item 1</h2>
 				<div class="col-md-2 col-sm-3 col-xs-5 c-cart-image">
 					<img src="../../assets/base/img/content/shop2/24.jpg"/>
 				</div>
 				<div class="col-md-4 col-sm-9 col-xs-7 c-cart-desc">
-					<h3><a href="shop-product-details-2.html" class="c-font-bold c-theme-link c-font-22 c-font-dark">Winter Jacket</a></h3>
+					<h3><a href="shop-product-details-2.html" class="c-font-bold c-theme-link c-font-22 c-font-dark">{{products}}</a></h3>
+					<!-- {{product.name}} -->
 					<p>Color: Blue</p>
 					<p>Size: S</p>
 				</div>
@@ -62,7 +64,7 @@
 			</div>
 			<!-- END: SHOPPING CART ITEM ROW -->
 			<!-- BEGIN: SHOPPING CART ITEM ROW -->
-			<div class="row c-cart-table-row">
+			<!-- <div class="row c-cart-table-row">
 				<h2 class="c-font-uppercase c-font-bold c-theme-bg c-font-white c-cart-item-title">Item 2</h2>
 				<div class="col-md-2 col-sm-3 col-xs-5 c-cart-image">
 					<img src="../../assets/base/img/content/shop2/12.jpg"/>
@@ -98,7 +100,7 @@
 					<a href="#" class="c-theme-link c-cart-remove-desktop">×</a>
 					<a href="#" class="c-cart-remove-mobile btn c-btn c-btn-md c-btn-square c-btn-red c-btn-border-1x c-font-uppercase">Remove item from Cart</a>
 				</div>
-			</div>
+			</div> -->
 			<!-- END: SHOPPING CART ITEM ROW -->
 			<!-- BEGIN: SUBTOTAL ITEM ROW -->
 			<div class="row">

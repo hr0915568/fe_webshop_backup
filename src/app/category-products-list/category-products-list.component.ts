@@ -5,7 +5,7 @@ import {Product} from '../_models/product';
 import 'rxjs/add/operator/switchMap';
 import {forEach} from '@angular/router/src/utils/collection';
 import {AuthService} from '../_services/auth.service';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+import {CartService} from '../_services/cart.service';
 
 @Component({
   selector: 'app-category-products-list',
@@ -19,7 +19,7 @@ export class CategoryProductsListComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private categoryService: CategoryService,
               private auth: AuthService,
-              private _cookieService:CookieService
+              private cart: CartService
               ) { }
 
   ngOnInit() {
@@ -27,6 +27,7 @@ export class CategoryProductsListComponent implements OnInit {
     // (+) converts string 'id' to a number
       .switchMap((params: ParamMap) => this.categoryService.getProductsOfCategory(+params.get('id')))
       .subscribe((products) => this.products = products);
+      
   }
 
   /**
@@ -53,22 +54,12 @@ export class CategoryProductsListComponent implements OnInit {
     if(row.length > 0) {
       products.push(row);
     }
-
+    // console.log(this.products);
     return products;
   }
 
-  setCooki(string){
-    if (this.getCookie() == 'PROD1') {
-      console.log(this.getCookie() + ' Prod1 exists');
-      this._cookieService.put('bramcartitems',string + this.getCookie())
-    }
-    else {
-    return this._cookieService.put('bramcartitems',string);
-    }
-  }
-
-  getCookie() {
-    return this._cookieService.get('bramcartitems');
+  addToCart(product) {
+    this.cart._addtocart(product)
   }
 
 }

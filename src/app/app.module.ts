@@ -33,7 +33,7 @@ import { WelcomeTextComponent } from './welcome-text/welcome-text.component';
 import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { CartService } from './_services/cart.service';
 
 @NgModule({
   imports: [
@@ -70,7 +70,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
     CartComponent,
     CheckoutComponent
   ],
-  providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService,CookieService ],
+  providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService,CartService ],
   bootstrap: [ AppComponent, LogginButtonComponent, WelcomeTextComponent ]
 })
 export class AppModule { }
