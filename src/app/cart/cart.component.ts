@@ -19,12 +19,8 @@ export class CartComponent implements OnInit {
   }
 
   getproductsforCart() {
-  // let tempproducts = JSON.parse(this.cart._getcart());
-  // this.products = toArray(tempproducts);
-  this.products = this.cart._getcart()
-  console.log(this.products);
-  // let row: Product[] = [];
-  // return this.products;  
+   this.products = this.cart._getcart()
+  // console.log(this.products);
   return this.products;
   }
 

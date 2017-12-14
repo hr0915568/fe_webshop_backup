@@ -108,108 +108,7 @@
                 </div>
               </div>
               <!-- BILLING ADDRESS -->
-              <!-- SHIPPING ADDRESS -->
-              <h3 class="c-font-bold c-font-uppercase c-font-24">Shipping Address</h3>
-              <div class="row">
-                <div class="form-group col-md-12">
-                  <div class="c-checkbox-inline">
-                    <div class="c-checkbox c-toggle-hide" data-object-selector="c-shipping-address" data-animation-speed="600">
-                      <input type="checkbox" id="checkbox6-444" class="c-check">
-                      <label for="checkbox6-444">
-                        <span class="inc"></span>
-                        <span class="check"></span>
-                        <span class="box"></span>
-                        Ship to different address?
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="c-shipping-address">
-                <div class="row">
-                  <div class="form-group col-md-12">
-                    <label class="control-label">Country</label> <select class="form-control c-square c-theme">
-                      <option value="1">Malaysia</option>
-                      <option value="2">Singapore</option>
-                      <option value="3">Indonesia</option>
-                      <option value="4">Thailand</option>
-                      <option value="5">China</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="row">
-                      <div class="form-group col-md-6">
-                        <label class="control-label">First Name</label>
-                        <input type="text" class="form-control c-square c-theme" placeholder="First Name">
-                      </div>
-                      <div class="col-md-6">
-                        <label class="control-label">Last Name</label>
-                        <input type="text" class="form-control c-square c-theme" placeholder="Last Name">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-12">
-                    <label class="control-label">Company Name</label>
-                    <input type="text" class="form-control c-square c-theme" placeholder="Company Name">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-12">
-                    <label class="control-label">Address</label>
-                    <input type="text" class="form-control c-square c-theme" placeholder="Street Address">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-12">
-                    <input type="text" class="form-control c-square c-theme" placeholder="Apartment, suite, unit etc. (optional)">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-12">
-                    <label class="control-label">Town / City</label>
-                    <input type="text" class="form-control c-square c-theme" placeholder="Town / City">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="row">
-                      <div class="form-group col-md-6">
-                        <label class="control-label">State / County</label> <select class="form-control c-square c-theme">
-                          <option value="0">Select an option...</option>
-                          <option value="1">Malaysia</option>
-                          <option value="2">Singapore</option>
-                          <option value="3">Indonesia</option>
-                          <option value="4">Thailand</option>
-                          <option value="5">China</option>
-                        </select>
-                      </div>
-                      <div class="col-md-6">
-                        <label class="control-label">Postcode / Zip</label>
-                        <input type="text" class="form-control c-square c-theme" placeholder="Postcode / Zip">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="row">
-                      <div class="form-group col-md-6">
-                        <label class="control-label">Email Address</label>
-                        <input type="email" class="form-control c-square c-theme" placeholder="Email Address">
-                      </div>
-                      <div class="col-md-6">
-                        <label class="control-label">Phone</label>
-                        <input type="tel" class="form-control c-square c-theme" placeholder="Phone">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- SHIPPING ADDRESS -->
+             
               <div class="row">
                 <div class="form-group col-md-12">
                   <label class="control-label">Order Notes</label>
@@ -228,22 +127,16 @@
                   <div class="col-md-6 c-font-20"><h2>Total</h2></div>
                 </li>
                 <li class="row c-border-bottom"></li>
-                <li class="row c-margin-b-15 c-margin-t-15">
-                  <div class="col-md-6 c-font-20"><a href="shop-product-details.html" class="c-theme-link">Winter Coat x 1</a></div>
+                <li class="row c-margin-b-15 c-margin-t-15" *ngFor="let product of products">
+                  <div class="col-md-6 c-font-20"><a href="shop-product-details.html" class="c-theme-link">{{product.productname}}</a></div>
                   <div class="col-md-6 c-font-20">
-                    <p class="">$30.99</p>
-                  </div>
-                </li>
-                <li class="row c-margin-b-15 c-margin-t-15">
-                  <div class="col-md-6 c-font-20"><a href="shop-product-details-2.html" class="c-theme-link">Sports Wear x 1</a></div>
-                  <div class="col-md-6 c-font-20">
-                    <p class="">$30.99</p>
+                    <p class="">&euro;{{product.price}}</p>
                   </div>
                 </li>
                 <li class="row c-margin-b-15 c-margin-t-15">
                   <div class="col-md-6 c-font-20">Subtotal</div>
                   <div class="col-md-6 c-font-20">
-                    <p class="">$<span class="c-subtotal">61.98</span></p>
+                    <p class="">$<span class="c-subtotal">{{total}}</span></p>
                   </div>
                 </li>
                 <li class="row c-border-top c-margin-b-15"></li>
@@ -260,25 +153,6 @@
                           Flat Rate
                         </label>
                         <p class="c-shipping-price c-font-bold c-font-20">$20.00</p>
-                      </div>
-                      <div class="c-radio">
-                        <input type="radio" value="10" id="radio12" class="c-radio" name="shipping_price">
-                        <label for="radio12">
-                          <span class="inc"></span>
-                          <span class="check"></span>
-                          <span class="box"></span>
-                          Local Delivery
-                        </label>
-                        <p class="c-shipping-price c-font-bold c-font-20">$10.00</p>
-                      </div>
-                      <div class="c-radio">
-                        <input type="radio" value="0" id="radio13" class="c-radio" name="shipping_price">
-                        <label for="radio13">
-                          <span class="inc"></span>
-                          <span class="check"></span>
-                          <span class="box"></span>
-                          Local Pickup
-                        </label>
                       </div>
                     </div>
                   </div>
@@ -342,7 +216,7 @@
                 <li class="row">
                   <div class="form-group col-md-12" role="group">
                     <button type="submit" class="btn btn-lg c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Submit</button>
-                    <button type="submit" class="btn btn-lg btn-default c-btn-square c-btn-uppercase c-btn-bold">Cancel</button>
+                    <button routerLink="/cart" type="submit" class="btn btn-lg btn-default c-btn-square c-btn-uppercase c-btn-bold">Cancel</button>
                   </div>
                 </li>
               </ul>

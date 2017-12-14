@@ -7,7 +7,7 @@ import {CartService} from './../_services/cart.service';
   styleUrls: ['./cart-button.component.css']
 })
 export class CartButtonComponent implements OnInit {
-
+    cnt:number;
   constructor(private cart: CartService) { }
 
   ngOnInit() {
@@ -15,9 +15,10 @@ export class CartButtonComponent implements OnInit {
   }
 
 
+
   getCartCount() {
-    var cnt = this.cart._getCartNumber();
-    console.log(cnt);
-    return cnt;
+    this.cnt = this.cart._getCartNumber();
+    console.log(this.cnt);
+    return this.cnt;
   }
 }

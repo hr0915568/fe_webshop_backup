@@ -36,9 +36,13 @@ export class CartService {
         var temp2 = productAdd.push(products[i]); 
       }
       localStorage.setItem('cart',JSON.stringify(productAdd));
+      }
+      else 
+      {
+        localStorage.setItem('cart',JSON.stringify(productAdd));
+      }
+      this._getCartNumber();
     }
-    else 
-    {localStorage.setItem('cart',JSON.stringify(productAdd));}}
   }
   
-}
+
