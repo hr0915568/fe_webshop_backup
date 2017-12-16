@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import {HttpClient} from '@angular/common/http'
 
 
-import { ProductService }  from '../product.service';
+import { ProductService }  from '../_services/product.service';
 
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/switchMap';
@@ -20,8 +20,7 @@ import {Product} from '../_models/product';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  // products: Product= new Product();
- products: Product[] = new Array<Product>();
+ product: Product;
 
 
   constructor(
@@ -32,23 +31,14 @@ export class ProductsComponent implements OnInit {
 
 
   ngOnInit() {
-    const categoryid = +this.route.snapshot.paramMap.get('categoryid');
-    this.productService.getProducts(categoryid)
-    .subscribe(products => this.products  = products);
+    // const productid = +this.route.snapshot.paramMap.get('productid');
+    // this.productService.getProduct(productid)
+    // .subscribe(product => this.product  = product);
+    this.route.paramMap
+    // (+) converts string 'id' to a number
+      .switchMap((params: ParamMap) => this.productService.getProduct(+params.get('id')))
+      .subscribe((product) => this.product = product);
   }
-
-
-  getProducts(): void {
-
-    const categoryid = +this.route.snapshot.paramMap.get('categoryid');
-    this.productService.getProducts(categoryid)
-    .subscribe(products => this.products  = products);
-    // this.products = Array.of(this.products);
-
-
-
-  }
-
 
 
 }

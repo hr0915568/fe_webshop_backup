@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from './../_services/cart.service';
 import {Product} from '../_models/product';
-import { toArray } from 'rxjs/operators/toArray';
 
 
 @Component({

@@ -27,11 +27,12 @@ const routes: Routes = [
       { path: 'details/:id', component: HeroDetailComponent },
       { path: 'category', component: CategoryComponent },
       { path: 'category/:id', component: CategoryProductsListComponent },
-      { path: 'products/:categoryid', component: ProductsComponent},
+      // { path: 'products/:categoryid', component: ProductsComponent},
       { path: 'search/:keywords', component: SearchComponent},
       { path: 'search', component: SearchComponent},
       { path: 'cart', component :CartComponent},
-      { path: 'checkout', component: CheckoutComponent}
+      { path: 'checkout', component: CheckoutComponent},
+      { path: 'product/:id', component: ProductsComponent}
     ]
   },
   {

@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
 
 
 import { ProductsComponent } from './products/products.component';
-import { ProductService }          from './product.service';
+import { ProductService }          from './_services/product.service';
 import { CategoryProductsListComponent } from './category-products-list/category-products-list.component';
 import {AuthGuard} from "./_services/auth-guard.service";
 import {AuthService} from "./_services/auth.service";
