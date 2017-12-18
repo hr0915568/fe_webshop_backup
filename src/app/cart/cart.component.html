@@ -1,6 +1,6 @@
 		<!-- BEGIN: PAGE CONTENT -->
 		<!-- BEGIN: CONTENT/SHOPS/SHOP-CART-1 -->
-		<div class="c-shop-cart-page-1">
+		<div class="c-shop-cart-page-1" item-width="100%">
 			<div class="row c-cart-table-title">
 				<div class="col-md-2 c-cart-image">
 					<h3 class="c-font-uppercase c-font-bold c-font-16 c-font-grey-2">Image</h3>
@@ -30,7 +30,7 @@
 					<img src="../../assets/base/img/content/shop2/24.jpg"/>
 				</div>
 				<div class="col-md-4 col-sm-9 col-xs-7 c-cart-desc">
-					<h3><a href="shop-product-details-2.html" class="c-font-bold c-theme-link c-font-22 c-font-dark">{{product.productname}}</a></h3>
+					<h3><a routerLink="/product/{{product.id}}" class="c-font-bold c-theme-link c-font-22 c-font-dark">{{product.productname}}</a></h3>
 					<!-- {{product.name}} -->
 					<p>Color: Blue</p>
 					<p>Size: S</p>
@@ -62,11 +62,11 @@
 			</div>
 			<div class="row">
 				<div class="c-cart-subtotal-row c-margin-t-20">
-					<div class="col-md-2 col-md-offset-9 col-sm-6 col-xs-6 c-cart-subtotal-border">
+					<div class="col-md-2 col-md-offset-8 col-sm-6 col-xs-6 c-cart-subtotal-border">
 						<h3 class="c-font-uppercase c-font-bold c-right c-font-16 c-font-grey-2">Subtotal</h3>
 					</div>
 					<div class="col-md-1 col-sm-6 col-xs-6 c-cart-subtotal-border">
-						<h3 class="c-font-bold c-font-16">$246.00</h3>
+						<h3 class="c-font-bold c-font-16">&euro;{{total}}</h3>
 					</div>
 				</div>
 			</div>
@@ -74,11 +74,11 @@
 			<!-- BEGIN: SUBTOTAL ITEM ROW -->
 			<div class="row">
 				<div class="c-cart-subtotal-row">
-					<div class="col-md-2 col-md-offset-9 col-sm-6 col-xs-6 c-cart-subtotal-border">
+					<div class="col-md-2 col-md-offset-8 col-sm-6 col-xs-6 c-cart-subtotal-border">
 						<h3 class="c-font-uppercase c-font-bold c-right c-font-16 c-font-grey-2">Shipping Fee</h3>
 					</div>
 					<div class="col-md-1 col-sm-6 col-xs-6 c-cart-subtotal-border">
-						<h3 class="c-font-bold c-font-16">$15.00</h3>
+						<h3 class="c-font-bold c-font-16">&euro;15.00</h3>
 					</div>
 				</div>
 			</div>
@@ -86,18 +86,20 @@
 			<!-- BEGIN: SUBTOTAL ITEM ROW -->
 			<div class="row">
 				<div class="c-cart-subtotal-row">
-					<div class="col-md-2 col-md-offset-9 col-sm-6 col-xs-6 c-cart-subtotal-border">
+					<div class="col-md-2 col-md-offset-8 col-sm-6 col-xs-6 c-cart-subtotal-border">
 						<h3 class="c-font-uppercase c-font-bold c-right c-font-16 c-font-grey-2">Grand Total</h3>
 					</div>
 					<div class="col-md-1 col-sm-6 col-xs-6 c-cart-subtotal-border">
-						<h3 class="c-font-bold c-font-16">$261.00</h3>
+						<h3 class="c-font-bold c-font-16">&euro;{{total + 15.00}}</h3>
 					</div>
 				</div>
 			</div>
 			<!-- END: SUBTOTAL ITEM ROW -->
 			<div class="c-cart-buttons">
-				<a href="#" class="btn c-btn btn-lg c-btn-red c-btn-square c-font-white c-font-bold c-font-uppercase c-cart-float-l">Continue Shopping</a>
+				<a onclick="goBack()"class="btn c-btn btn-lg c-btn-red c-btn-square c-font-white c-font-bold c-font-uppercase c-cart-float-l">Continue Shopping</a>
 				<a routerLink="/checkout" class="btn c-btn btn-lg c-theme-btn c-btn-square c-font-white c-font-bold c-font-uppercase c-cart-float-r">Checkout</a>
 			</div>
 		</div>
+
+
 <!-- END: CONTENT/SHOPS/SHOP-CART-1 -->

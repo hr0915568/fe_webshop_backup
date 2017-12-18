@@ -10,11 +10,13 @@ import {Product} from '../_models/product';
 })
 export class CartComponent implements OnInit {
   products: Product[];
+  total : number = 0;
 
   constructor(private cart: CartService) { }
 
   ngOnInit() {
     this.getproductsforCart();
+    this.getTotalPrice();
   }
 
   getproductsforCart() {
@@ -23,4 +25,8 @@ export class CartComponent implements OnInit {
   return this.products;
   }
 
+  getTotalPrice():number {
+    this.total  = this.cart._getCartTotPrice();
+    return this.total;
+  }
 }

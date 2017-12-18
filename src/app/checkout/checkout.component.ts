@@ -29,10 +29,7 @@ export class CheckoutComponent implements OnInit {
     this.products = this.cart._getcart()
     for (let product of this.products) {
         this.total = this.total + product.price;
-        console.log(this.total);
-        console.log(product.price);
     }
-    console.log(this.total);
    return this.total;
    }
 
