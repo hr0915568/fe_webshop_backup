@@ -15,6 +15,9 @@ import {AuthGuard} from './_services/auth-guard.service';
 import {SearchComponent} from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import {RegisterComponent} from './register/register.component';
+import {InvoicesComponent} from './invoices/invoices.component';
+import {ProfileComponent} from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -23,7 +26,6 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      { path: 'dashboard', component: DashboardComponent },
       { path: 'details/:id', component: HeroDetailComponent },
       { path: 'category', component: CategoryComponent },
       { path: 'category/:id', component: CategoryProductsListComponent },
@@ -40,7 +42,11 @@ const routes: Routes = [
     component: MyaccountLayoutComponent,
     children: [
       { path: 'login', component: LoginComponent},
-      { path: 'myaccount', component: MyAccountComponent, canActivate: [AuthGuard] }
+      { path: 'myaccount', component: MyAccountComponent, canActivate: [AuthGuard] },
+      { path: 'register', component: RegisterComponent},
+      { path: 'dashboard', component: DashboardComponent},
+      { path: 'invoices', component: InvoicesComponent},
+      { path: 'profile', component: ProfileComponent},
     ]
   }
 

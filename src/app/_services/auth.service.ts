@@ -54,6 +54,10 @@ export class AuthService {
   handleAuth() {
   }
 
+  updateProfile() {
+    this.getProfile();
+  }
+
   private getProfile()
   {
     this.http.get<Userprofile>('http://api.hrwebshop.tk/profile',  {

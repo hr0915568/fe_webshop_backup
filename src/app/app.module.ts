@@ -35,6 +35,10 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartService } from './_services/cart.service';
 import { CartButtonComponent } from './cart-button/cart-button.component';
+import { RegisterComponent } from './register/register.component';
+import {RegisterationService} from './_services/registeration.service';
+import { ProfileComponent } from './profile/profile.component';
+import { InvoicesComponent } from './invoices/invoices.component';
 
 @NgModule({
   imports: [
@@ -70,9 +74,12 @@ import { CartButtonComponent } from './cart-button/cart-button.component';
     SearchComponent,
     CartComponent,
     CheckoutComponent,
-    CartButtonComponent
+    CartButtonComponent,
+    RegisterComponent,
+    ProfileComponent,
+    InvoicesComponent
   ],
-  providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService,CartService ],
+  providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService, CartService, RegisterationService ],
   bootstrap: [ AppComponent, LogginButtonComponent, WelcomeTextComponent,CartButtonComponent ]
 })
 export class AppModule { }

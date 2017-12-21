@@ -8,16 +8,12 @@ import { CategoryService } from '../_services/category.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  heroes: Category[] = [];
+
 
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
-    this.getHeroes();
+
   }
 
-  getHeroes(): void {
-    // this.categoryService.ge()
-    //   .subscribe(heroes => this.heroes = heroes.slice(1, 5));
-  }
 }

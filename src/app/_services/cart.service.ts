@@ -13,15 +13,21 @@ export class CartService {
     }
 
     _getcart() {
-      return JSON.parse(localStorage.getItem('cart'));
+      var cartData = localStorage.getItem('cart');
+
+      if(cartData == null) {
+        cartData = "{}";
+      }
+
+      return JSON.parse(cartData);
     }
 
 
     _getcart1 () {
       var products =  this._getcart();
-      for (var i = 0; i < products.length; i++) { 
+      for (var i = 0; i < products.length; i++) {
         console.log(products[i]);
-        var temp2 = this.producten[i] = products[i]; 
+        var temp2 = this.producten[i] = products[i];
       }
       console.log(this.producten);
       return this.producten;
@@ -31,18 +37,18 @@ export class CartService {
       let productAdd = new Array(item);
       var products =  this._getcart();
       if (products !== null) {
-      for (var i = 0; i < products.length; i++) { 
+      for (var i = 0; i < products.length; i++) {
         console.log(products[i]);
-        var temp2 = productAdd.push(products[i]); 
+        var temp2 = productAdd.push(products[i]);
       }
       localStorage.setItem('cart',JSON.stringify(productAdd));
       }
-      else 
+      else
       {
         localStorage.setItem('cart',JSON.stringify(productAdd));
       }
       this._getCartNumber();
     }
   }
-  
+
 
