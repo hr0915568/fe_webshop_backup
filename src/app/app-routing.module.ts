@@ -15,6 +15,7 @@ import {AuthGuard} from './_services/auth-guard.service';
 import {SearchComponent} from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CheckoutCompleteComponent } from './checkout-complete/checkout-complete.component';
 
 const routes: Routes = [
   {
@@ -27,12 +28,12 @@ const routes: Routes = [
       { path: 'details/:id', component: HeroDetailComponent },
       { path: 'category', component: CategoryComponent },
       { path: 'category/:id', component: CategoryProductsListComponent },
-      // { path: 'products/:categoryid', component: ProductsComponent},
       { path: 'search/:keywords', component: SearchComponent},
       { path: 'search', component: SearchComponent},
       { path: 'cart', component :CartComponent},
       { path: 'checkout', component: CheckoutComponent},
-      { path: 'product/:id', component: ProductsComponent}
+      { path: 'product/:id', component: ProductsComponent},
+      { path: 'checkout-complete', component: CheckoutCompleteComponent}
     ]
   },
   {

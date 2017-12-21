@@ -35,6 +35,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartService } from './_services/cart.service';
 import { CartButtonComponent } from './cart-button/cart-button.component';
+import { CheckoutCompleteComponent } from './checkout-complete/checkout-complete.component';
 
 @NgModule({
   imports: [
@@ -70,7 +71,8 @@ import { CartButtonComponent } from './cart-button/cart-button.component';
     SearchComponent,
     CartComponent,
     CheckoutComponent,
-    CartButtonComponent
+    CartButtonComponent,
+    CheckoutCompleteComponent
   ],
   providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService,CartService ],
   bootstrap: [ AppComponent, LogginButtonComponent, WelcomeTextComponent,CartButtonComponent ]

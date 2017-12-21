@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from './../_services/cart.service';
 import {Product} from '../_models/product';
+import {ChangeDetectorRef} from '@angular/core';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class CartComponent implements OnInit {
   products: Product[];
   total : number = 0;
 
-  constructor(private cart: CartService) { }
+  constructor(private cart: CartService,private cd : ChangeDetectorRef) { }
 
   ngOnInit() {
     this.getproductsforCart();
@@ -29,4 +30,12 @@ export class CartComponent implements OnInit {
     this.total  = this.cart._getCartTotPrice();
     return this.total;
   }
+
+  deleteFromCart(product) {
+    // this.cart._deletefromcart(product);
+    this.cd.detectChanges();
+    this.cart._deletefromcart(product);
+    window.location.reload();
+  }
+
 }
