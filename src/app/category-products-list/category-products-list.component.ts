@@ -59,7 +59,7 @@ export class CategoryProductsListComponent implements OnInit {
   }
 
   addToCart(product) {
-    this.cart._addtocart(product)
+    this.cart._addtocart(product);
   }
 
 }
