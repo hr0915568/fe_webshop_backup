@@ -13,9 +13,6 @@ import { HeroSearchComponent }  from './hero-search/hero-search.component';
 import { CategoryService }          from './_services/category.service';
 import { MessageService }       from './message.service';
 import { MessagesComponent }    from './messages/messages.component';
-import { LayoutComponent } from './layout/layout.component';
-import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.component';
-import { LayoutHeaderComponent } from './layout/layout-header/layout-header.component';
 import { HomeComponent } from './home/home.component';
 
 
@@ -60,9 +57,6 @@ import { CheckoutCompleteComponent } from './checkout-complete/checkout-complete
     HeroDetailComponent,
     MessagesComponent,
     HeroSearchComponent,
-    LayoutComponent,
-    LayoutFooterComponent,
-    LayoutHeaderComponent,
     HomeComponent,
     ProductsComponent,
     CategoryProductsListComponent,
