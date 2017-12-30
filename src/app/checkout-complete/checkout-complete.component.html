@@ -81,17 +81,17 @@
         <div class="c-content-overlay">
           <div class="c-overlay-wrapper">
             <div class="c-overlay-content">
-              <a href="shop-product-details-2.html" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">Explore</a>
+              <a routerLink="/product/{{product.id}}" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">Explore</a>
             </div>
           </div>
           <div class="c-bg-img-top-center c-overlay-object" data-height="height">
-            <img width="100%" class="img-responsive" src="../../assets/base/img/content/shop2/24.jpg">
+            <img width="100%" class="img-responsive" src="../../assets/images/product{{product.id}}.jpg">
           </div>
         </div>
       </div>
       <div class="col-md-5 col-sm-8">
         <ul class="c-list list-unstyled">
-          <li class="c-margin-b-25"><a href="shop-product-details-2.html" class="c-font-bold c-font-22 c-theme-link">{{product.productname}}</a></li>
+          <li class="c-margin-b-25"><a routerLink="/product/{{product.id}}" class="c-font-bold c-font-22 c-theme-link">{{product.productname}}</a></li>
           <li class="c-margin-b-10">Color: Blue</li>
           <li>Size: S</li>
           <li>Quantity: x1</li>

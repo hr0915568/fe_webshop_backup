@@ -37,6 +37,7 @@ import {RegisterationService} from './_services/registeration.service';
 import { ProfileComponent } from './profile/profile.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { CheckoutCompleteComponent } from './checkout-complete/checkout-complete.component';
+import {OrderService} from "./_services/order.service";
 
 @NgModule({
   imports: [
@@ -76,7 +77,7 @@ import { CheckoutCompleteComponent } from './checkout-complete/checkout-complete
     CartButtonComponent,
     CheckoutCompleteComponent
   ],
-  providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService, CartService, RegisterationService ],
+  providers: [ CategoryService, MessageService, ProductService, AuthGuard, AuthService, CartService, RegisterationService, OrderService ],
   bootstrap: [ AppComponent, LogginButtonComponent, WelcomeTextComponent,CartButtonComponent ]
 })
 export class AppModule { }

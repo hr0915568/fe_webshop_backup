@@ -1,7 +1,7 @@
 		<!-- BEGIN: PAGE CONTENT
 		<div class="c-content-box c-size-lg">
-      <div class="container">
-        <form class="c-shop-form-1">-->
+      <div class="container"> -->
+        <form class="c-shop-form-1" (ngSubmit)="placeorder()" #f="ngForm">
           <!-- <div class="row">  -->
             <!-- BEGIN: ADDRESS FORM -->
             <div class="col-md-7 c-padding-20">
@@ -39,13 +39,18 @@
               <div class="row">
                 <div class="form-group col-md-12">
                   <label class="control-label">Address</label>
-                  <input type="text" class="form-control c-square c-theme" placeholder="Street Address">
+                  <input type="text" class="form-control c-square c-theme" placeholder="Street Address" name="street" [(ngModel)]="order.street">
                 </div>
               </div>
               <div class="row">
                 <div class="form-group col-md-12">
-                  <input type="text" class="form-control c-square c-theme" placeholder="Apartment, suite, unit etc. (optional)">
+                  <input type="text" class="form-control c-square c-theme" placeholder="Street Number" name="streetno" [(ngModel)]="order.streetno">
                 </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <input type="text" class="form-control c-square c-theme" placeholder="Street Number Addition" name="streetnoadd" [(ngModel)]="order.streetnoadd">
+                  </div>
               </div>
               <div class="row">
                 <div class="form-group col-md-12">
@@ -68,7 +73,7 @@
                     </div>
                     <div class="col-md-6">
                       <label class="control-label">Postcode / Zip</label>
-                      <input type="text" class="form-control c-square c-theme" placeholder="Postcode / Zip">
+                      <input type="text" class="form-control c-square c-theme" placeholder="Postcode / Zip" name="postalcode" [(ngModel)]="order.postalcode">
                     </div>
                   </div>
                 </div>
@@ -215,17 +220,18 @@
                 </li>
                 <li class="row">
                   <div class="form-group col-md-12" role="group">
-                    <button type="submit" routerLink="/checkout-complete" class="btn btn-lg c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Submit</button>
-                    <button routerLink="/cart" type="submit" class="btn btn-lg btn-default c-btn-square c-btn-uppercase c-btn-bold">Cancel</button>
+                    <!--  routerLink="/checkout-complete" -->
+                    <button type="submit" class="btn btn-lg c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Submit</button>
+                    <button routerLink="/cart" type="cancel" class="btn btn-lg btn-default c-btn-square c-btn-uppercase c-btn-bold">Cancel</button>
                   </div>
                 </li>
               </ul>
             </div>
             </div>
             <!-- END: ORDER FORM -->
-          <!-- </div>
+          <!-- </div> -->
         </form>
-      </div>
+      <!--</div>
     </div>   -->
         <!-- END: PAGE CONTENT -->
      
