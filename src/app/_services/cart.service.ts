@@ -22,32 +22,20 @@ export class CartService {
 
     _getCartTotPrice():number {
       this.AllProducts = this._getcart()
+      if (this.AllProducts !== null) {
       for (var i = 0; i < this.AllProducts.length; i++) {
           this.TotalPrice += Number(this.AllProducts[i].price);
       }
       return this.TotalPrice;
      }
+     else {
+       return 0.0;
+     } 
+     }
 
     _getcart() {
       return JSON.parse(localStorage.getItem('cart'));
     }
-
-    _addtocart_good(item) {
-      let productAdd = new Array(item);
-      var products =  this._getcart();
-      if (products !== null) {
-      for (var i = 0; i < products.length; i++) {
-        var temp2 = productAdd.push(products[i]); 
-      }
-      localStorage.setItem('cart',JSON.stringify(productAdd));
-      }
-      else 
-      {
-        localStorage.setItem('cart',JSON.stringify(productAdd));
-      }
-      this._getCartNumber();
-    }
-
 
     _addtocart(item) {
       let productAdd = new Array(item);
@@ -74,16 +62,13 @@ export class CartService {
     _deletefromcart(item) {
       let productAdd = new Array(item);
       var products =  this._getcart();
+      console.log(products.length);
       let newArray = new Array();
-      if (products !== null) {
+      if (products !== null && products.length > 1) {
         this.AllProducts = products;
         this.product = item;
         for (var i = 0; i < this.AllProducts.length; i++) {
-          console.log("click:" + this.product.id);
           if (this.AllProducts[i].id !== this.product.id) {
-            console.log("product" + this.AllProducts[i].id);
-            // console.log(this.product.id);
-            console.log("test");
             var temp2 = newArray.push(this.AllProducts[i]);
           }
           else {
@@ -94,7 +79,7 @@ export class CartService {
       }
       else 
       {
-        localStorage.setItem('cart',JSON.stringify(productAdd));
+        localStorage.removeItem('cart');
       }
     }
 

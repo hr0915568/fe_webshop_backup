@@ -1,6 +1,6 @@
 		<!-- BEGIN: PAGE CONTENT -->
 		<!-- BEGIN: CONTENT/SHOPS/SHOP-CART-1 -->
-		<div class="c-shop-cart-page-1" item-width="100%">
+		<div class="c-shop-cart-page-1" item-width="100%" *ngIf="products !== null">
 			<div class="row c-cart-table-title">
 				<div class="col-md-2 c-cart-image">
 					<h3 class="c-font-uppercase c-font-bold c-font-16 c-font-grey-2">Image</h3>
@@ -28,7 +28,6 @@
 				</div>
 				<div class="col-md-4 col-sm-9 col-xs-7 c-cart-desc">
 					<h3><a routerLink="/product/{{product.id}}" class="c-font-bold c-theme-link c-font-22 c-font-dark">{{product.productname}}</a></h3>
-					<!-- {{product.name}} -->
 					<p>Color: Blue</p>
 					<p>Size: S</p>
 				</div>
@@ -97,4 +96,9 @@
 		</div>
 
 
+				<div class="c-shop-cart-page-1 c-center" *ngIf="products == undefined">
+					<i class="fa fa-frown-o c-font-dark c-font-50 c-font-thin "></i>
+					<h2 class="c-font-thin c-center">Your Shopping Cart is Empty</h2>
+					<a  onclick="goBack()" class="btn c-btn btn-lg c-btn-dark c-btn-square c-font-white c-font-bold c-font-uppercase">Continue Shopping</a>
+				</div>
 <!-- END: CONTENT/SHOPS/SHOP-CART-1 -->

@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
 
   getproductsforCart() {
    this.products = this.cart._getcart()
-  // console.log(this.products);
+  console.log(this.products);
   return this.products;
   }
 
