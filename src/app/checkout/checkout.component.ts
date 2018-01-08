@@ -13,6 +13,7 @@ export class CheckoutComponent implements OnInit {
   products : Product[];
   total : number = 0;
   order: any = {};
+  CheckBoxTerms: boolean= false;
 
   constructor(private cart: CartService,private orderService: OrderService,
     private router: Router) { }
@@ -20,6 +21,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
     this.getproductsforCart();
     this.getTotalPrice();
+    this.CheckBoxTerms;
   }
 
   getproductsforCart() {
@@ -54,4 +56,13 @@ export class CheckoutComponent implements OnInit {
      );
      console.log(this.order.street);
    }
+
+   CheckboxToggle(){
+    this.CheckBoxTerms = !this.CheckBoxTerms;// this will change value of it true and false 
+    console.log(this.CheckBoxTerms);
+  }
+
+  clearCart() {
+    this.cart._clearCart()
+  }
 }
